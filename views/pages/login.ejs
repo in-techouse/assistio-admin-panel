@@ -1,2 +1,26 @@
 <% extend ('../auth_layout')%>
-<h2>Hello Login Page</h2>
+<div class="container">
+    <div class="left-section">
+        <div class="header">
+            <h1 class="animation a1">Welcome Back!</h1>
+            <h4 class="animation a2">Log in for entering your membership dashboard.</h4>
+        </div>
+        <div class="form">
+            <form action="/login" method="POST">
+
+                <input type="email" name="email" class="form-field animation a3" placeholder="Username" required>
+                <input type="password" name="password" minlength="6" class="form-field animation a4" placeholder="Password" required>
+                
+                <% if(error!=""){%>
+                <div class="form-group form-success-gone">
+                    <div class="alert alert-danger">
+                        <%- error%>
+                    </div>
+                </div>
+                <%}%>
+                <button type="submit" class="animation a6">LOGIN</button>
+            </form>
+        </div>
+    </div>
+    <div class="right-section"></div>
+</div>
