@@ -14,12 +14,36 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 /* GET home page. */
 router.get('/', function (req, res) {
-  res.render('pages/login', { error: "" });
+  res.render('pages/login', { error: "" });   // res.render displays page
 });
 
 
 router.post('/login', function (req, res) {
-  res.json("1")
+  firebase.auth().signInWithEmailAndPassword(req.body.email, req.body.password).then(r => {
+    var id = req.body.email.replace("@", "-");
+    id = req.body.id.replace(/\./g, "_");
+    firebase.database().ref().child("Admins").child(id).once('value').then(data => {
+      if (data === null || data === undefined || data.val() === null || data.val() === undefined) {
+
+        res.render('pages/login', { error: "you are not autherized to login here 🤨" });
+      }
+      else {
+        req.session.id = data.val().id;
+        req.session.name = data.val().name;
+        req.session.email = req.body.email;
+
+        res.json("1");                                                    // print value that pass
+
+      };
+
+    }).catch(error => {
+      res.render('pages/login', { error: "you are not autherized to login here 🤨" });
+
+    })
+
+  }).catch(e => {
+    res.render('pages/login', { error: e.message });
+  })
 });
 
 module.exports = router;
