@@ -21,7 +21,7 @@ router.get('/', function (req, res) {
 router.post('/login', function (req, res) {
   firebase.auth().signInWithEmailAndPassword(req.body.email, req.body.password).then(r => {
     var id = req.body.email.replace("@", "-");
-    id = req.body.id.replace(/\./g, "_");
+    id = id.replace(/\./g, "_");
     firebase.database().ref().child("Admins").child(id).once('value').then(data => {
       if (data === null || data === undefined || data.val() === null || data.val() === undefined) {
 
@@ -32,13 +32,12 @@ router.post('/login', function (req, res) {
         req.session.name = data.val().name;
         req.session.email = req.body.email;
 
-        res.json("1");                                                    // print value that pass
+        res.redirect("/admin");                                           // print value that pass
 
       };
 
     }).catch(error => {
       res.render('pages/login', { error: "you are not autherized to login here 🤨" });
-
     })
 
   }).catch(e => {
