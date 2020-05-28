@@ -50,7 +50,7 @@
 }
 
 @media all and (min-width: 992px) {
-  .sidebar .nav>li.active-pro {
+  .sidebar .nav > li.active-pro {
     position: absolute;
     width: 100%;
     bottom: 10px;
@@ -60,4 +60,22 @@
 .card.card-upgrade .card-category {
   max-width: 530px;
   margin: 0 auto;
+}
+
+.valueLabel {
+  color: #f0f0f0;
+  font-weight: bold;
+  float: left;
+  font-size: 20px !important;
+}
+
+.value {
+  color: #f0f0f0;
+  float: right;
+  font-size: 20px !important;
+}
+
+hr {
+  background-color: white !important;
+  height: 1px !important;
 }

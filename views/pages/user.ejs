@@ -1,1 +1,87 @@
 <% extend ('../layout')%>
+<div class="content">
+    <div class="container">
+
+
+        <div class="card card-user">
+            <div class="card-body">
+                <p class="card-text">
+                <div class="author">
+                    <div class="block block-one"></div>
+                    <div class="block block-two"></div>
+                    <div class="block block-three"></div>
+                    <div class="block block-four"></div>
+                    <a href="javascript:void(0)">
+                        <% if (user.image && user.image.length > 0 ){ %>
+                        <img class="avatar" src="<%= user.image %>" alt="...">
+                        <% } else {%>
+                        <img class="avatar" src="/public/img/default-avatar.png" alt="...">
+                        <%}%>
+                        <h5 class="title"><%= user.first_Name %> <%= user.last_Name %></h5>
+                    </a>
+                    <p class="description">
+                        <%= user.phone_no %>
+                    </p>
+                </div>
+                </p>
+                <hr />
+                <div class="card-description">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="valueLabel">Images</label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="value"><%= user.images%></label>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="valueLabel">Videos</label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="value"><%= user.videos%></label>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="valueLabel">Audios</label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="value"><%= user.audios%></label>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="valueLabel">Documents</label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="value"><%= user.documents%></label>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="valueLabel">Contacts</label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="value"><%= user.contacts%></label>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="valueLabel">Speech Notes</label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="value"><%= user.notes%></label>
+                        </div>
+                    </div>
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

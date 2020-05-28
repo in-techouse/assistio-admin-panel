@@ -16,6 +16,19 @@
   <link href="/public/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="/public/demo/demo.css" rel="stylesheet" />
+  <!--   Core JS Files   -->
+  <script src="/public/js/core/jquery.min.js"></script>
+  <script src="/public/js/core/popper.min.js"></script>
+  <script src="/public/js/core/bootstrap.min.js"></script>
+  <script src="/public/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-database.js"></script>
+
 </head>
 
 <body class="">
@@ -26,22 +39,10 @@
       <%- content %>
     </div>
   </div>
-  <!--   Core JS Files   -->
-  <script src="/public/js/core/jquery.min.js"></script>
-  <script src="/public/js/core/popper.min.js"></script>
-  <script src="/public/js/core/bootstrap.min.js"></script>
-  <script src="/public/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <!--  Google Maps Plugin    -->
-  <!-- Place this tag in your head or just before your close body tag. -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-  <!-- Chart JS -->
-  <script src="/public/js/plugins/chartjs.min.js"></script>
   <!--  Notifications Plugin    -->
   <script src="/public/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="/public/js/black-dashboard.min.js?v=1.0.0"></script>
-  <!-- Black Dashboard DEMO methods, don't include it in your project! -->
-  <script src="/public/demo/demo.js"></script>
   <script>
     $(document).ready(function () {
       $().ready(function () {
@@ -151,13 +152,6 @@
           $('body').removeClass('white-content');
         });
       });
-    });
-  </script>
-  <script>
-    $(document).ready(function () {
-      // Javascript method's body can be found in assets/js/demos.js
-      demo.initDashboardPageCharts();
-
     });
   </script>
   <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>

@@ -1,53 +1,56 @@
 <% extend ('../layout')%>
 <div class="content">
-    <!-- Start from here -->
-    <div class="container">
+  <!-- Start from here -->
+  <div class="container">
 
-        <div class="content">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="card ">
-                  <div class="card-header">
-                    <h4 class="card-title"> Simple Table</h4>
-                  </div>
-                  <div class="card-body">
-                    <div class="table-responsive">
-                      <table class="table tablesorter " id="">
-                        <thead class=" text-primary">
-                          <tr>
-                            <th>
-                              ID
-                            </th>
-                            <th>
-                              first Name
-                            </th>
-                            <th>
-                               Email
-                            </th>
-                            <th class="text-center">
-                              Phone Number
-                            </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                            <% data.forEach(function(d) { %>
-                                <tr>
-                                    <td><%= d.val().id %></td>
-                                    <td><%= d.val().first_Name %></td>
-                                    <td><%= d.val().email %></td>
-                                    <td><%= d.val().phone_no %></td>
-                                    <td><%= d.val().images %></td>
-                                    <td><%= d.val().videos %></td>
-                                </tr>
-                     
-                          <%  }); %>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
+    <div class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card ">
+            <div class="card-header">
+              <h4 class="card-title"> Listing All Users</h4>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table tablesorter">
+                  <thead class=" text-primary">
+                    <tr>
+                      <th>
+                        ID
+                      </th>
+                      <th>
+                        Name
+                      </th>
+                      <th>
+                        Email
+                      </th>
+                      <th>
+                        Phone Number
+                      </th>
+                      <th>
+                        Details
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% data.forEach(function(d) { %>
+                    <tr>
+                      <td><%= d.val().id %></td>
+                      <td><%= d.val().first_Name %> <%= d.val().last_Name %></td>
+                      <td><%= d.val().email %></td>
+                      <td><%= d.val().phone_no %></td>
+                      <td>
+                        <a href="/admin/userDetail?id=<%= d.val().id%>" class="btn btn-primary">Show Details</a>
+                      </td>
+                    </tr>
+                    <%  }); %>
+                  </tbody>
+                </table>
               </div>
+            </div>
+          </div>
+        </div>
 
 
+      </div>
     </div>
-</div>
